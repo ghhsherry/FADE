@@ -27,24 +27,24 @@ parser.add_argument('--algo',
                     help='Background subtraction method (KNN, MOG2).',
                     default='GSOC')
 
-parser.add_argument('--num', type=int, help='.', default='7')
+parser.add_argument('--gse_size', 
+                    type=int, 
+                    help='getStructuringElement kernel size', 
+                    default='7')
 
 parser.add_argument('--video',
                     type=str,
+                    help='video address'
                     default="/mnt/data2/gaokongdataset/video/")
 parser.add_argument('--dataset',
                     type=str,
+                    help='picture and annotation'
                     default="/mnt/data2/gaokongdataset/dataset/")
 parser.add_argument(
     '--val',
     type=str,
-    help='输入视频',
+    help='input video',
     default="/mnt/data2/gaokongdataset/Annotation/resolution_test.txt")
-parser.add_argument(
-    '--test_val',
-    type=str,
-    help='少量val数据',
-    default="/mnt/data2/gaokongdataset/Annotation/little_val.txt")
 parser.add_argument('--time',
                     type=str,
                     help='beginning and ending',
@@ -52,14 +52,11 @@ parser.add_argument('--time',
 parser.add_argument(
     '--result_txt',
     type=str,
-    help="输出的txt",
+    help="output address",
     default=
     "/mnt/data1/zzb/gaokongpaowu/output/zzb_tro_0.3_GSOC_resolution__300_100_7.txt"
 )
-# rec整个矩形做了筛选 point只筛选了左上角点
-'''parser.add_argument('--output_frame',type=str,help="输出帧",default="/mnt/data1/zzb/gaokongpaowu/output_6_3_ps/")
-parser.add_argument('--output_video',type=str,help="输出视频",default="/mnt/data1/zzb/gaokongpaowu/output_6_3_ps/")
-'''
+
 
 args = parser.parse_args()
 
